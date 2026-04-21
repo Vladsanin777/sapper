@@ -6,7 +6,10 @@
 JNIEXPORT void JNICALL Java_com_example_sapper_MinsField_init
         (JNIEnv *env, jobject obj, jlong rows, jlong cols, jlong mins);
 
-JNIEXPORT jbyte JNICALL Java_com_example_sapper_MinsField_getCountMins
+JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountMins
+        (JNIEnv *env, jobject obj);
+
+JNIEXPORT jbyte JNICALL Java_com_example_sapper_MinsField_getCountMinsNear
         (JNIEnv *env, jobject obj, jlong row, jlong col);
 
 JNIEXPORT jboolean JNICALL Java_com_example_sapper_MinsField_isMin
@@ -28,9 +31,6 @@ JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountCols
         (JNIEnv *env, jobject obj);
 
 JNIEXPORT jboolean JNICALL Java_com_example_sapper_MinsField_isLive
-        (JNIEnv *env, jobject obj);
-
-JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountFree
         (JNIEnv *env, jobject obj);
 
 JNIEXPORT jboolean JNICALL Java_com_example_sapper_MinsField_isVictory

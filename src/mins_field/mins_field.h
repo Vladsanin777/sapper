@@ -13,6 +13,8 @@ typedef struct mins_field * mins_field_t;
 // Инициализируем минное поле
 mins_field_t init_mins_field(const size_t count_rows, const size_t count_columns, const size_t count_mins);
 
+size_t get_count_mins_mins_field(mins_field_t field);
+
 // Получаем количество мин во круг текушей ячейки
 unsigned char get_count_mins_cell_mins_field(mins_field_t field, const size_t row, const size_t column);
 
@@ -34,9 +36,15 @@ size_t get_columns_mins_field(mins_field_t field);
 
 bool get_is_live_mins_field(mins_field_t field);
 
-size_t get_free_cell_mins_field(mins_field_t field);
-
 bool is_victory_mins_field(mins_field_t field);
+
+size_t get_count_empty_mins_field(mins_field_t field);
+
+size_t get_count_empty_open_mins_field(mins_field_t field);
+
+size_t get_count_empty_close_mins_field(mins_field_t field);
+
+unsigned char get_percent_victory_mins_field(mins_field_t field);
 
 bool open_cell_mins_field(mins_field_t field, const size_t row , const size_t column);
 

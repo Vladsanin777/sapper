@@ -8,7 +8,12 @@ JNIEXPORT void JNICALL Java_com_example_sapper_MinsField_init
     setPtr(env, obj, (void *)init_mins_field((size_t)rows, (size_t)cols, (size_t)mins));
 }
 
-JNIEXPORT jbyte JNICALL Java_com_example_sapper_MinsField_getCountMins
+JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountMins
+        (JNIEnv *env, jobject obj) {
+    return (jlong) get_count_mins_mins_field(getPtr(env, obj));
+}
+
+JNIEXPORT jbyte JNICALL Java_com_example_sapper_MinsField_getCountMinsNear
         (JNIEnv *env, jobject obj, jlong row, jlong col) {
     return (jbyte) get_count_mins_cell_mins_field(getPtr(env, obj), (size_t)row, (size_t)col);
 }
@@ -48,14 +53,29 @@ JNIEXPORT jboolean JNICALL Java_com_example_sapper_MinsField_isLive
     return (jboolean) get_is_live_mins_field(getPtr(env, obj));
 }
 
-JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountFree
-        (JNIEnv *env, jobject obj) {
-    return (jlong) get_free_cell_mins_field(getPtr(env, obj));
-}
-
 JNIEXPORT jboolean JNICALL Java_com_example_sapper_MinsField_isVictory
         (JNIEnv *env, jobject obj) {
     return (jboolean) is_victory_mins_field(getPtr(env, obj));
+}
+
+JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountEmpty
+        (JNIEnv *env, jobject obj) {
+    return (jlong) get_count_empty_mins_field(getPtr(env, obj));
+}
+
+JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountEmptyOpen
+        (JNIEnv *env, jobject obj) {
+    return (jlong) get_count_empty_open_mins_field(getPtr(env, obj));
+}
+
+JNIEXPORT jlong JNICALL Java_com_example_sapper_MinsField_getCountEmptyClose
+        (JNIEnv *env, jobject obj) {
+    return (jlong) get_count_empty_close_mins_field(getPtr(env, obj));
+}
+
+JNIEXPORT jbyte JNICALL Java_com_example_sapper_MinsField_getPercentVictory
+        (JNIEnv *env, jobject obj) {
+    return (jlong) get_percent_victory_mins_field(getPtr(env, obj));
 }
 
 JNIEXPORT jboolean JNICALL Java_com_example_sapper_MinsField_open

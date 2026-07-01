@@ -9,12 +9,16 @@ struct cell;
 // Указатель для пользователя на структуру ряда из ячеек
 typedef struct cell * cell_t;
 
+
 // при неудаче возвращаем ошибку(иначе 0), везде даже в инициализации
 //
 // Создаём ячейку
 cell_t init_cell(void);
 
+void default_cell(cell_t cell);
+
 // Ставим флаг
+
 void up_flag_cell(cell_t cell);
 
 // Убираем флаг
